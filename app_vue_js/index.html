@@ -18,8 +18,14 @@
     </header>
     <section id="user-goal">
       <h2>My Course Goal</h2>
-      <p> {{ courseGoal }}</p>
-      <p>Learn more <a v-bind:href="vueLink" target="_blank">about Vue</a></p>
+      <!-- questo è un esempio se vuoi cambiare dinamicamente un paragrafo in un h2 che hai nel tuo oggetto data in js -->
+      <!-- <p v-html="outputGoal()"></p> -->
+
+      <p> {{ outputGoal() }}</p>
+      <!-- v-bind messo prima dell href fa capire a vue che quella chiave dell 'oggetto sarà un link' -->
+      <p>Learn more <a v-bind:href="vueLink"
+       target="_blank">about Vue</a></p>
+
     </section>
   </body>
 </html>
