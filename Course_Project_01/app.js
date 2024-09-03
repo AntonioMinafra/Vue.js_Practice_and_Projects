@@ -7,7 +7,8 @@ const app = Vue.createApp({
         return {
             playerHealth: 100,
             monsterHealth: 100,
-            currentRound: 0
+            currentRound: 0,
+            winner: null,
         }
     },
     methods: {
@@ -36,8 +37,6 @@ const app = Vue.createApp({
                 this.playerHealth += healValue;
             }
             this.attackPlayer();
-
-
         }
     },
     computed: {
@@ -50,6 +49,24 @@ const app = Vue.createApp({
         mayUseSpacialAttack(){
             return this.currentRound % 3 !== 0;
         }
+    },
+    watch: {
+        playerHealth(value){
+            if (value <= 0 && this.monsterHealth <= 0) {
+                this.winner = 'Draw'
+            } else if (value <= 0) {
+                //player lost
+                this.winner = 'Monster'
+            }
+        },
+        monsterHealth(value){
+            if (value <= 0 && this.playerHealth <= 0) {
+                this.winner = 'Draw'
+            } else if (value <= 0) {
+                //monster lost
+                this.winner = 'player'
+            }
+        },
     }
 });
 
