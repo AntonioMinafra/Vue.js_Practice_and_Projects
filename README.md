@@ -1,3 +1,5 @@
+<img src="./assets/vue.jpeg">
+
 # Vue.js_Practice_and_Projects
 
 ## Description
