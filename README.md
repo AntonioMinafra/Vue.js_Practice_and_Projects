@@ -1,4 +1,4 @@
-<img src="./assets/vue.jpeg">
+<img src="./assets/vue.jpeg" with="100%">
 
 # Vue.js_Practice_and_Projects
 
